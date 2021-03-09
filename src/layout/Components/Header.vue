@@ -58,3 +58,14 @@ export default defineComponent({
   }
 })
 </script>
+<style lang="scss" scoped>
+  .account-avatar {
+    float: right;
+    height: 100%;
+    margin-left: auto;
+    overflow: hidden;
+  }
+  .ant-dropdown-menu-item {
+    min-width: 160px;
+  }
+</style>

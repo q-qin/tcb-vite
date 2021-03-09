@@ -28,19 +28,3 @@ export default defineComponent({
   },
 });
 </script>
-<style >
-   .logo {
-    height: 32px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px;
-  }
-  .account-avatar {
-    float: right;
-    height: 100%;
-    margin-left: auto;
-    overflow: hidden;
-  }
-  .ant-dropdown-menu-item {
-    min-width: 160px;
-  }
-</style>
