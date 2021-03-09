@@ -11,13 +11,12 @@ import HelloWorld from '@/components/HelloWorld.vue';
 import { message } from 'ant-design-vue';
 import { getApp } from '@/tcb';
 
-const Home = defineComponent({
+export default defineComponent({
   setup(props,context) {
     const addCount = () => {
       message.error('This is a normal message');
     };
     const msg = ref('[mail]');
-    console.log(getApp)
     return {
       msg,
       addCount
@@ -28,5 +27,4 @@ const Home = defineComponent({
   },
 });
 
-export default Home;
 </script>
