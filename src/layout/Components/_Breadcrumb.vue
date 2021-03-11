@@ -4,7 +4,7 @@
     <Item>工作台</Item>
   </Breadcrumb>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import { Breadcrumb } from 'ant-design-vue';
 const { Item } = Breadcrumb;

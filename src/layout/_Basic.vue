@@ -15,7 +15,7 @@
 </template>
 <script lang='ts'>
 import { defineComponent } from 'vue';
-import { Header,Sider,Breadcrumb,Footer } from './Components/index';
+import { Header,Breadcrumb,Sider,Footer } from './Components/index';
 import { LinkOutlined } from '@ant-design/icons-vue';
 
 import { Layout } from 'ant-design-vue';

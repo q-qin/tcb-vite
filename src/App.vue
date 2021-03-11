@@ -10,5 +10,10 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="less">
+@import 'ant-design-vue/dist/antd.less';
+
+/*
+** antdesign 样式覆盖
+*/
 </style>

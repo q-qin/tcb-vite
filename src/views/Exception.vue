@@ -1,19 +1,24 @@
 <template>
-  <a-result status="404" title="404" sub-title="抱歉，您访问的页面不存在！">
+  <Result status="404" title="404" sub-title="抱歉，您访问的页面不存在！">
     <template #extra>
       <router-link to="/">
-        <a-button type="primary">
+        <Button type="primary">
           返回首页
-        </a-button>
+        </Button>
       </router-link>
     </template>
-  </a-result>
+  </Result>
 </template>
 
 <script lang="ts">
+import { Button,Result } from 'ant-design-vue';
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  components:{
+    Button,
+    Result
+  },
   setup() {
     
   },
@@ -21,6 +26,6 @@ export default defineComponent({
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>

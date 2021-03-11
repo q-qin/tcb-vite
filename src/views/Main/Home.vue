@@ -1,18 +1,17 @@
 <template>
   <div>
     {{state._getKey}}
-    <a-input v-model:value="state.key" ></a-input>
-    <a-button type="primary" @click="addCount">点击</a-button>
-    <a-button @click="increment">
+    <Input v-model:value="state.key" ></Input>
+    <Button type="primary" @click="addCount">点击</Button>
+    <Button @click="increment">
       Count is: {{ state.count }}, double is: {{ state.double }} 
-    </a-button>
-
+    </Button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref,reactive,computed,watch } from 'vue';
-import { message } from 'ant-design-vue';
+import { message,Button,Input } from 'ant-design-vue';
 import { getApp } from '@/tcb';
 
 declare interface State {
@@ -23,6 +22,10 @@ declare interface State {
 }
 
 export default defineComponent({
+  components:{
+    Button,
+    Input
+  },
   setup(props,context) {
     const addCount = () => {
       message.success('This is a normal message');
@@ -49,7 +52,7 @@ export default defineComponent({
       addCount,
       increment,
     };
-  },
+  }
 });
 
 </script>

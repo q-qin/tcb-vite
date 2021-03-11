@@ -25,7 +25,7 @@
     </Dropdown>
   </Header>
 </template>
-<script>
+<script lang="ts">
 import { createVNode,defineComponent } from 'vue';
 import { Modal } from 'ant-design-vue';
 import {clearToken} from '@/utils/jscookie'
@@ -70,7 +70,7 @@ export default defineComponent({
   }
 })
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
   .account-avatar {
     float: right;
     height: 100%;
