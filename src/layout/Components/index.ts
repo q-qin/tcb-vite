@@ -1,4 +1,4 @@
-export { default as Header } from "./Header.vue";
-export { default as Footer } from "./Footer.vue";
-export { default as Sider } from "./Sider.vue";
-export { default as Breadcrumb } from "./Breadcrumb.vue";
+export { default as Header } from "./aHeader.vue";
+export { default as Footer } from "./aFooter.vue";
+export { default as Sider } from "./aSider.vue";
+export { default as Breadcrumb } from "./aBreadcrumb.vue";

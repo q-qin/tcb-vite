@@ -1,30 +1,38 @@
 <template>
-  <a-layout style="min-height: 100vh">
+  <Layout style="min-height: 100vh">
     <Sider />
-    <a-layout>
+    <Layout>
       <Header />
-      <a-layout-content class="margin-lr-10">
+      <Content class="margin-lr-10">
         <Breadcrumb />
         <div :style="{ padding: '24px', background: '#fff', minHeight: '300px', }">
           <router-view />
         </div>
-      </a-layout-content>
-      <Footer />
-    </a-layout>
-  </a-layout>
+      </Content>
+      <Footer  />
+    </Layout>
+  </Layout>
 </template>
 <script lang='ts'>
-import { defineComponent,ref  } from 'vue';
-import { Header,Footer,Sider,Breadcrumb } from './Components/index';
+import { defineComponent } from 'vue';
+import { Header,Sider,Breadcrumb,Footer } from './Components/index';
+import { LinkOutlined } from '@ant-design/icons-vue';
+
+import { Layout } from 'ant-design-vue';
+const {Content} = Layout;
 
 export default defineComponent({
   setup() {
   },
   components: {
+    Layout,
+    Content,
+
     Header,
     Footer,
     Sider,
-    Breadcrumb
+    Breadcrumb,
+    LinkOutlined
   },
 });
 </script>

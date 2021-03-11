@@ -4,14 +4,14 @@
   "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
   "functionRoot": "cloudfunctions",
   "framework": {
-    "name": "tcb-vue",
+    "name": "tcb-vite",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-website",
         "inputs": {
           "buildCommand": "npm run build",
           "outputPath": "dist",
-          "cloudPath": "/vue",
+          "cloudPath": "/vite",
           "envVariables": {
             "VUE_APP_ENV_ID": "{{env.ENV_ID}}"
           }

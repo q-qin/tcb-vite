@@ -1,5 +1,5 @@
 <template>
-  <a-layout-sider v-model="collapsed" collapsible @click="() => (collapsed = !collapsed)">
+  <Sider v-model="collapsed" collapsible @click="() => (collapsed = !collapsed)">
     <template #trigger>
       <MenuUnfoldOutlined
         v-if="collapsed"
@@ -7,22 +7,25 @@
       <MenuFoldOutlined v-else />
     </template>
     <div class="logo" />
-    <a-menu theme="dark" mode="inline" >
+    <Menu theme="dark" mode="inline" >
       <!-- <template v-for="route in routes"> -->
-        <a-menu-item  >
+        <Item  >
           <router-link to="/index" >
               <LineChartOutlined />
               <span>工作台</span>
           </router-link>
-        </a-menu-item>
+        </Item>
       <!-- </template> -->
-    </a-menu>
-  </a-layout-sider>
+    </Menu>
+  </Sider>
 </template>
 <script>
 import { defineComponent,ref } from 'vue'
 import { MenuFoldOutlined, MenuUnfoldOutlined,LineChartOutlined } from '@ant-design/icons-vue';
 import { routes } from '@/router';
+import { Layout,Menu } from 'ant-design-vue';
+const {Sider} = Layout;
+const {Item} = Menu;
 
 export default defineComponent({
   setup() {
@@ -33,6 +36,10 @@ export default defineComponent({
     }
   },
   components:{
+    Sider,
+    Menu,
+    Item,
+
     MenuFoldOutlined,
     MenuUnfoldOutlined,
     LineChartOutlined,
