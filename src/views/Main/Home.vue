@@ -1,7 +1,7 @@
 <template>
   <div>
     {{state._getKey}}
-    <Input v-model:value="state.key" ></Input>
+    <Input v-model:value="state.key" class="margin-tb-10"></Input>
     <Button type="primary" @click="addCount">点击</Button>
     <Button @click="increment">
       Count is: {{ state.count }}, double is: {{ state.double }} 
@@ -13,6 +13,7 @@
 import { defineComponent, ref,reactive,computed,watch } from 'vue';
 import { message,Button,Input } from 'ant-design-vue';
 import { getApp } from '@/tcb';
+import { useApp } from '@/hooks/useApp';
 
 declare interface State {
   count:number
@@ -47,6 +48,9 @@ export default defineComponent({
           console.log(key,prevKey)
         }
       )
+    const {store} = useApp();
+    console.log(store.state.title);
+    
     return {
       state,
       addCount,

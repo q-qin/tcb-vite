@@ -30,9 +30,9 @@ export default defineConfig({
       less: {
         modifyVars: {
           // https://github.com/vueComponent/ant-design-vue/blob/master/components/style/themes/default.less
-          'primary-color': '#1DA57A',
-          'link-color': '#1DA57A',
-          'border-radius-base': '2px',
+          // 'primary-color': '#1DA57A',
+          // 'link-color': '#1DA57A',
+          // 'border-radius-base': '2px',
         },
         javascriptEnabled: true,
       },

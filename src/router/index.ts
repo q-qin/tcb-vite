@@ -6,16 +6,16 @@ export const routes = [{
   name: 'Home',
   redirect: '/index',
   component: BasicLayout,
-  meta: { title: '工作台', icon: 'line-chart' },
+  meta: { title: '工作台', icon: 'DashboardOutlined' },
   children: [{
     path: '/index',
     name: 'index',
-    meta: { title: '工作台', icon: 'line-chart' },
+    meta: { title: '工作台', icon: 'LineChartOutlined' },
     component: () => import(/* webpackChunkName: "Main" */ '@/views/Main/Home.vue'),
   },{
     path: '/dengji',
     name: 'dengji',
-    meta: { title: '修车登记', icon: 'line-chart' },
+    meta: { title: '修车登记', icon: 'FormOutlined' },
     component: () => import(/* webpackChunkName: "Main" */ '@/views/Main/Dengji.vue'),
   }]
 },{

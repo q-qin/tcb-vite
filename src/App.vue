@@ -11,8 +11,7 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-@import 'ant-design-vue/dist/antd.less';
-
+@import './styles/index.less';
 /*
 ** antdesign 样式覆盖
 */

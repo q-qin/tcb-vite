@@ -18,8 +18,8 @@
         <template v-if="!item.children">
           <router-link :to="item.path">
             <Item :key="item.path">
-              <PieChartOutlined />
-              <span>{{ item.meta.title }}</span>
+                <Icon :icon="item.meta.icon"/>
+                <span>{{ item.meta.title }}</span>
             </Item>
           </router-link>
         </template>
@@ -32,8 +32,8 @@
 </template>
 <script lang='ts'>
 import { defineComponent,reactive,ref,watch  } from 'vue'
-import useApp from "@/hooks/useApp";
-import { MenuFoldOutlined, MenuUnfoldOutlined,LineChartOutlined,PieChartOutlined } from '@ant-design/icons-vue';
+import { useApp } from "@/hooks/useApp";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue';
 import { routes } from '@/router';
 import { Layout,Menu } from 'ant-design-vue';
 const {Sider} = Layout;
@@ -41,18 +41,18 @@ const {Item} = Menu;
 import { RouteConfig } from "@/types/route";
 
 import MenuItem from './_MenuItem.vue';
+import { Icon } from './_Icon'
 
 export default defineComponent({
   components:{
     Sider,
     Menu,
     Item,
+    MenuItem,
+    Icon,
 
     MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    LineChartOutlined,
-    MenuItem,
-    PieChartOutlined,
+    MenuUnfoldOutlined
   },
   setup() {
     const { route } = useApp();

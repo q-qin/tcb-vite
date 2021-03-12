@@ -1,7 +1,7 @@
-import useStore from "./useStore";
+import { useStore } from "./useStore";
 import { useRoute, useRouter } from "vue-router";
 
-const useApp = () => {
+export const useApp = () => {
   const store = useStore();
   const route = useRoute();
   const router = useRouter();

@@ -1,7 +1,6 @@
 import store from "@/store";
 
-const useStore = () => {
+export const useStore = () => {
   return store;
 };
 
-export default useStore;

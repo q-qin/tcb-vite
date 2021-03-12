@@ -1,21 +1,35 @@
 <template>
-  <Breadcrumb class="margin-tb-10">
-    <Item>首页</Item>
-    <Item>工作台</Item>
+  <Breadcrumb :style="{margin:'10px 0'}">
+    <Item v-for="item in state.Breadcrumb" :key="item">{{item}}</Item>
   </Breadcrumb>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent,reactive,watch } from 'vue'
+import useApp from "@/hooks/useApp";
+
 import { Breadcrumb } from 'ant-design-vue';
 const { Item } = Breadcrumb;
 
 export default defineComponent({
-  setup() {
-    
-  },
   components:{
     Breadcrumb,
     Item
+  },
+  setup() {
+    const { route } = useApp()
+    const state = reactive<any>({
+      Breadcrumb:[]
+    })
+
+    watch(route, ({ path, matched }) => {
+      matched[0].children.length > 1
+        ? ( state.Breadcrumb = [route.matched[0].meta.title,route.matched[1].meta.title])
+        : (state.Breadcrumb = [route.matched[0].meta.title]);
+    }, { immediate: true });
+
+    return {
+      state
+    }
   }
 })
 </script>
