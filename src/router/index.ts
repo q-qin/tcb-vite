@@ -19,6 +19,12 @@ export const routes = [{
     component: () => import('@/views/Main/Dengji.vue'),
   }]
 },{
+  path: '/user/login',
+  name: 'login',
+  component: () => import('@/views/User/Login.vue'),
+  meta: { title: '登录', },
+  hidden: true
+},{
   path: '/404',
   name: '404',
   component: () => import('@/views/Exception.vue'),

@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-const KEY_TOKEN = 'xc_token'; // access_token
+const KEY_TOKEN = 'xc1_token'; // access_token
 const EXPIRES = 1; // cookie过期时间(d)，0=session
 
 // 获取access_token
