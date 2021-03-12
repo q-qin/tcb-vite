@@ -11,7 +11,6 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-@import './styles/index.less';
 /*
 ** antdesign 样式覆盖
 */

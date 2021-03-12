@@ -16,19 +16,22 @@ export default defineConfig({
     // cors:true,
   },
   plugins: [vue(),
-  styleImport({
-    libs: [{
-      libraryName: 'ant-design-vue',
-      esModule: true,
-      resolveStyle: (name) => {
-        return `ant-design-vue/es/${name}/style/index.less`;
-      },
-    }]
-  })],
+    // 这里控制按需加载antdv
+    // styleImport({
+    //   libs: [{
+    //     libraryName: 'ant-design-vue',
+    //     esModule: true,
+    //     resolveStyle: (name) => {
+    //       return `ant-design-vue/es/${name}/style/index.less`;
+    //     },
+    //   }]
+    // })
+  ],
   css: {
     preprocessorOptions: {
       less: {
         modifyVars: {
+          // 这里改antdv覆盖样式
           // https://github.com/vueComponent/ant-design-vue/blob/master/components/style/themes/default.less
           // 'primary-color': '#1DA57A',
           // 'link-color': '#1DA57A',
