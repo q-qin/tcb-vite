@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div>
     {{state._getKey}}
     <Input v-model:value="state.key" class="margin-tb-10"></Input>
@@ -23,6 +23,7 @@ declare interface State {
 }
 
 export default defineComponent({
+  name: 'Home',
   components:{
     Button,
     Input

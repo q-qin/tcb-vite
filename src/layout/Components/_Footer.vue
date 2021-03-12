@@ -9,9 +9,6 @@ import { LinkOutlined } from '@ant-design/icons-vue';
 import { Layout } from 'ant-design-vue';
 const { Footer } = Layout;
 export default defineComponent({
-  setup() {
-    
-  },
   components:{
     Footer,
     LinkOutlined

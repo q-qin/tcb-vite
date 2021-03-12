@@ -4,7 +4,7 @@
   </Breadcrumb>
 </template>
 <script lang="ts">
-import { defineComponent,reactive,watch } from 'vue'
+import { defineComponent,reactive,computed,watchEffect } from 'vue'
 import useApp from "@/hooks/useApp";
 
 import { Breadcrumb } from 'ant-design-vue';
@@ -21,12 +21,13 @@ export default defineComponent({
       Breadcrumb:[]
     })
 
-    watch(route, ({ path, matched }) => {
-      matched[0].children.length > 1
-        ? ( state.Breadcrumb = [route.matched[0].meta.title,route.matched[1].meta.title])
+    watchEffect(()=>{
+      const { matched } = route;
+      matched[0].children.length > 1?
+        ( state.Breadcrumb = [route.matched[0].meta.title,route.matched[1].meta.title])
         : (state.Breadcrumb = [route.matched[0].meta.title]);
-    }, { immediate: true });
-
+    })
+    
     return {
       state
     }

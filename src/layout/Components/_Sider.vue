@@ -14,7 +14,7 @@
       :openKeys="keys.openKeys"
       @openChange="v => (keys.openKeys = v)"
     >
-      <template v-for="item in list" :key="item.key">
+      <template v-for="(item,$index) in list" :key="$index">
         <template v-if="!item.children">
           <router-link :to="item.path">
             <Item :key="item.path">
@@ -31,7 +31,7 @@
   </Sider>
 </template>
 <script lang='ts'>
-import { defineComponent,reactive,ref,watch  } from 'vue'
+import { defineComponent,reactive,ref,watchEffect } from 'vue'
 import { useApp } from "@/hooks/useApp";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue';
 import { routes } from '@/router';
@@ -82,12 +82,13 @@ export default defineComponent({
        openKeys:[]
     });
 
-    watch(route, ({ path, matched }) => {
+    watchEffect(()=>{
+      const { path,matched } = route;
       matched[0].children.length > 1
-        ? (keys.selectedKeys = [path])
+            ? (keys.selectedKeys = [path])
         : (keys.selectedKeys = [matched[0].path]);
       keys.openKeys = [matched[0].path];
-    }, { immediate: true });
+    })
 
     return {
       collapsed,

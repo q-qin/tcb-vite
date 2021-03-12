@@ -19,11 +19,9 @@ import { Header,Breadcrumb,Sider,Footer } from './Components/index';
 import { LinkOutlined } from '@ant-design/icons-vue';
 
 import { Layout } from 'ant-design-vue';
-const {Content} = Layout;
+const { Content } = Layout;
 
 export default defineComponent({
-  setup() {
-  },
   components: {
     Layout,
     Content,

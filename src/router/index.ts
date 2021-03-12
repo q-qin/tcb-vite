@@ -11,17 +11,17 @@ export const routes = [{
     path: '/index',
     name: 'index',
     meta: { title: '工作台', icon: 'LineChartOutlined' },
-    component: () => import(/* webpackChunkName: "Main" */ '@/views/Main/Home.vue'),
+    component: () => import('@/views/Main/Home.vue'),
   },{
     path: '/dengji',
     name: 'dengji',
     meta: { title: '修车登记', icon: 'FormOutlined' },
-    component: () => import(/* webpackChunkName: "Main" */ '@/views/Main/Dengji.vue'),
+    component: () => import('@/views/Main/Dengji.vue'),
   }]
 },{
   path: '/404',
   name: '404',
-  component: () => import(/* webpackChunkName: "404" */ '@/views/Exception.vue'),
+  component: () => import('@/views/Exception.vue'),
   hidden: true
 },
 { path: '/:pathMatch(.*)', redirect: '/404', hidden: true }

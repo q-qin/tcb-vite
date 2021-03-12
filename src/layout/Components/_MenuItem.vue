@@ -6,7 +6,7 @@
     </template>
     <template v-for="child in route.children" :key="child.path">
       <router-link :to="child.path">
-        <Item v-model:key="child.path">
+        <Item :key="child.path">
           <Icon :icon="child.meta.icon" />
           <span>{{ child.meta.title }}</span>
         </Item>
@@ -21,7 +21,7 @@ import {Menu } from 'ant-design-vue';
 const {Item,SubMenu} = Menu;
 import { Icon } from './_Icon'
 
-const _MenuItem = defineComponent({
+export default defineComponent({
   components: {
     SubMenu,
     Item,
@@ -34,5 +34,4 @@ const _MenuItem = defineComponent({
     },
   },
 })
-export default _MenuItem
 </script>

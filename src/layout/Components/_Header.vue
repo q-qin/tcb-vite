@@ -7,16 +7,16 @@
       </span>
       <template #overlay>
         <Menu class="ant-drop-down" >
-          <Item key="center" class="item" >
+          <Item key="center" :style="{minWidth:'160px'}" >
             <UserOutlined />
             个人中心
           </Item>
-          <Item key="settings" class="item" >
+          <Item key="settings" :style="{minWidth:'160px'}" >
             <SettingOutlined />
             个人设置
           </Item>
           <Divider />
-          <Item key="logout" class="item" @click="logout" >
+          <Item key="logout" :style="{minWidth:'160px'}" @click="logout" >
             <LogoutOutlined />
             退出登录
           </Item>
@@ -36,6 +36,18 @@ const { Header } = Layout;
 const { Item,Divider } = Menu;
 
 export default defineComponent({
+  components:{
+    Header,
+    Avatar,
+    Dropdown,
+    Menu,
+    Item,
+    Divider,
+
+    UserOutlined,
+    SettingOutlined,
+    LogoutOutlined,
+  },
   setup() {
     const router = useRouter();
     const userName = 'admin';
@@ -55,18 +67,6 @@ export default defineComponent({
       userName,
       logout
     }
-  },
-  components:{
-    Header,
-    Avatar,
-    Dropdown,
-    Menu,
-    Item,
-    Divider,
-
-    UserOutlined,
-    SettingOutlined,
-    LogoutOutlined,
   }
 })
 </script>
@@ -76,8 +76,5 @@ export default defineComponent({
     height: 100%;
     margin-left: auto;
     overflow: hidden;
-  }
-  .ant-drop-down .item {
-    min-width: 160px;
   }
 </style>
