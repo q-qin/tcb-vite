@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^2.0.1",
+    "echarts": "^5.0.2",
     "js-cookie": "^2.2.1",
     "less": "^4.1.1",
     "less-loader": "^8.0.0",

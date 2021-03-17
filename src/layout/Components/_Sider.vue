@@ -84,7 +84,7 @@ export default defineComponent({
 
     watchEffect(()=>{
       const { path,matched } = route;
-      matched[0].children.length > 1
+      matched.length > 1
             ? (keys.selectedKeys = [path])
         : (keys.selectedKeys = [matched[0].path]);
       keys.openKeys = [matched[0].path];

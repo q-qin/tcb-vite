@@ -23,7 +23,7 @@ export default defineComponent({
 
     watchEffect(()=>{
       const { matched } = route;
-      matched[0].children.length > 1?
+      matched.length > 1?
         ( state.Breadcrumb = [route.matched[0].meta.title,route.matched[1].meta.title])
         : (state.Breadcrumb = [route.matched[0].meta.title]);
     })
