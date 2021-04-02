@@ -37,16 +37,18 @@
         </Statistic>
       </div>
     </div>
+    <HelloWorld />
   </div>
 </template>
 
 <script lang="ts">
 import * as echarts from "echarts";
-import { defineComponent, reactive } from 'vue';
+import { defineComponent,onBeforeMount,onMounted,defineAsyncComponent, reactive } from 'vue';
 import { Skeleton,Statistic } from 'ant-design-vue';
 import { ArrowDownOutlined,ArrowUpOutlined } from '@ant-design/icons-vue';
 import { getApp } from '@/tcb';
 import { useApp } from '@/hooks/useApp';
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default defineComponent({
   name: 'Home',
@@ -55,19 +57,32 @@ export default defineComponent({
     Statistic,
 
     ArrowDownOutlined,
-    ArrowUpOutlined
+    ArrowUpOutlined,
+    // HelloWorld
+    HelloWorld:defineAsyncComponent({
+      loader:()=> import('@/components/HelloWorld.vue'),
+      delay: 5000, 
+      timeout: 5000,
+      errorComponent: () => import("./ErrorComponent.vue"),
+      loadingComponent: () => import("./LoadingComponent.vue"),
+    })
   },
   setup() {
     const state = reactive({
       loaded:false,
     })
-    
+    onBeforeMount(()=>{
+      console.log('onBeforeMount')
+    });
+    onMounted(()=>{
+      console.log('onMounted')
+    });
     return {
-
       state,
     };
   },
   mounted(){
+      console.log('mounted')
     setTimeout(()=>{
       this.state.loaded = true;
       let myChart = echarts.init(this.$refs.line as HTMLCanvasElement);
